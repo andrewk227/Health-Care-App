@@ -4,13 +4,22 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final String hintText;
   final TextEditingController controller;
+  final Function(String?) onSaved;
+  Function validator;
+  TextInputType keyboardType;
 
-  const CustomTextField({
+  CustomTextField({
     super.key,
     required this.label,
     required this.hintText,
     required this.controller,
+    this.onSaved = _emptyFunction,
+    this.validator = _emptyFunction,
+    this.keyboardType = TextInputType.text,
   });
+
+  // for decleration of constant functions
+  static void _emptyFunction(String? value) {}
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +41,10 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: TextField(
+            child: TextFormField(
+              keyboardType: keyboardType,
+              onSaved: (value) => onSaved(value),
+              validator: (value) => validator(value),
               controller: controller,
               textAlign: TextAlign.right,
               decoration: InputDecoration(
