@@ -14,3 +14,4 @@ export 'package:el72ny/ViewModel/personal_informations_view_model.dart';
 export 'package:el72ny/ViewModel/dashboard_view_model.dart';
 export 'package:el72ny/ViewModel/home_view_model.dart';
 export 'package:el72ny/ViewModel/profile_view_model.dart';
+export 'package:el72ny/ViewModel/add_emergency_view_model.dart';

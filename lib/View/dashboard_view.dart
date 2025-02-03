@@ -1,3 +1,4 @@
+import 'package:el72ny/View/add_emergency_view.dart';
 import 'package:el72ny/exports/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,6 +60,19 @@ class _DashboardViewPageState extends State<DashboardViewPage> {
                       : SvgPicture.asset('assets/icons/profile.svg')),
             ]),
       ),
+      floatingActionButton: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.all(0),
+              backgroundColor: Colors.white,
+              fixedSize: const Size(60, 60)),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddEmergencyView(),
+                ));
+          },
+          child: const Icon(Icons.add)),
     );
   }
 }
