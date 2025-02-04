@@ -25,7 +25,7 @@ class _AddEmergencyViewState extends State<AddEmergencyView> {
       ),
       content: CustomText(
         text:
-            "Please choose between call and sms to make sure that the mobile phone added successfully",
+            "Please choose call, sms or both to make sure that the mobile phone added successfully!!",
         fontSize: 14,
       ),
       actions: [

@@ -8,7 +8,9 @@ class ProfileViewModel {
     age: 30,
     bpm: 70,
     bloodType: 'A+',
-    profileImage: '',
+    gender: 'male',
+    height: 170,
+    weight: 70,
   );
 
   TextEditingController firstNameController = TextEditingController();

@@ -31,16 +31,20 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 16.0,
-              color: Colors.grey[700],
+          SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.2,
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.grey[700],
+              ),
             ),
           ),
-          Expanded(
+          SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.55,
             child: TextFormField(
               keyboardType: keyboardType,
               onSaved: (value) => onSaved(value),
