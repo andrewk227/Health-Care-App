@@ -1,3 +1,4 @@
+import 'package:el72ny/View/line_chart_test.dart';
 import 'package:el72ny/exports/pages.dart';
 import 'package:el72ny/exports/widgets.dart';
 
@@ -116,11 +117,16 @@ class _HomeViewPageState extends State<HomeViewPage> {
                     signNum: homeViewModel.heartRate,
                   ),
                   buildVitalSignsCard(
-                    title: 'Heart Rate',
-                    icon: 'red_heart.svg',
-                    titleColor: Colors.red,
-                    signNum: homeViewModel.heartRate,
-                  ),
+                      title: 'Heart Rate',
+                      icon: 'red_heart.svg',
+                      titleColor: Colors.red,
+                      signNum: homeViewModel.heartRate,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ScaledLineChart()));
+                      }),
                   buildVitalSignsCard(
                     title: 'HR Variability',
                     icon: 'red_heart.svg',
@@ -137,14 +143,14 @@ class _HomeViewPageState extends State<HomeViewPage> {
   }
 }
 
-Widget buildVitalSignsCard({
-  required String title,
-  required String icon,
-  required Color titleColor,
-  required int signNum,
-}) {
+Widget buildVitalSignsCard(
+    {required String title,
+    required String icon,
+    required Color titleColor,
+    required int signNum,
+    void Function()? onTap}) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
