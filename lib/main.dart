@@ -1,3 +1,4 @@
+import 'package:el72ny/View/line_chart_test.dart';
 import 'package:el72ny/exports/pages.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,9 @@ class EmergencyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InitialViewPage(),
+      home: ScaledLineChart(),
     );
   }
 }
